@@ -241,7 +241,7 @@ def main(argv):
 
     print("pyimagesort: Found " + str(len(src_files)) + " image(s) in src dir.")
 
-    for file in tqdm(src_files, desc="Processing Images", ncols=40):
+    for file in tqdm(src_files, desc="Processing Images", ncols=120):
         exif = get_exif_from_file(file)
         time_str = ""
         address_str = ""
