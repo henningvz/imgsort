@@ -9,6 +9,7 @@ import pathlib
 import shutil
 import certifi
 import ssl
+from tqdm import tqdm
 
 from datetime import datetime
 import filecmp
@@ -240,7 +241,7 @@ def main(argv):
 
     print("pyimagesort: Found " + str(len(src_files)) + " image(s) in src dir.")
 
-    for file in src_files:
+    for file in tqdm(src_files, desc="Processing Images", ncols=40):
         exif = get_exif_from_file(file)
         time_str = ""
         address_str = ""
